@@ -2,7 +2,7 @@ package com.mgtic.dapm.proyectofinal
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v4.app.FragmentManager
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -10,7 +10,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val fragment = MenuFragment()
-       supportFragmentManager.beginTransaction().add(R.id.fragment_container,fragment).commit()
+      // supportFragmentManager.beginTransaction().add(R.id.fragment_container,fragment).commit()
+
+        val manager = supportFragmentManager
+        val transaction = manager.beginTransaction()
+        transaction.setCustomAnimations(android.R.anim.slide_in_left, android.R.anim.slide_out_right)
+        transaction.replace(R.id.fragment_container,fragment)
+        transaction.addToBackStack("menu")
+        transaction.commit()
 
     }
 }

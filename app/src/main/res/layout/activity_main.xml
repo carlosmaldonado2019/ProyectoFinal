@@ -13,13 +13,9 @@
 
         <TextView
                 android:layout_width="match_parent"
-                android:layout_height="220dp"
-                android:background="@drawable/untitled"
-                android:textAlignment="center"
-
-                android:textSize="24sp"
-                android:gravity="bottom"
-                android:textColor="@color/colorPrimaryDark"/>
+                android:layout_height="180dp"
+                android:background="@drawable/logo"
+                android:textAlignment="center"/>
         <FrameLayout
                 android:id="@+id/fragment_container"
                 android:layout_width="match_parent"
